@@ -2,11 +2,11 @@
 
 The toolchain automatically meshes parametrized 2D airfoils and creates the required directory infrastructure for subsequent CFD simulations. It was developed during a graduation project [[1]](#References) as a derivative of an earlier toolchain for 3D wings [[2]](#References).
 
-The 2D meshes are generated in Pointwise with O-grid topology. The directory infrastructure is setup for OpenFOAM cases with different Angle of Attack. The scripts are tailored to the parameterized Leading-Edge Inflatable (LEI) wing profiles investigated in [[1]](#References), but the functions should work with any 2D shape if the airfoil outline is changed in the main script.
+The 2D meshes are generated in Pointwise with O-grid topology. The directory infrastructure is set up for OpenFOAM cases with different angles of attack (AoA). The scripts are tailored to the parameterized Leading-Edge Inflatable (LEI) wing profiles investigated in [[1]](#References). Still, the functions should work with any 2D shape if the airfoil outline is changed in the main script.
 
-The CFD simulations were performed on the High Performance Computer (HPC) of the faculty of Aerospace Engineering of TU Delft.
+The CFD simulations were performed on the High-Performance Computer (HPC) of the faculty of Aerospace Engineering of TU Delft.
 
-For more information visit the subdirectories in this repository and have a look at the README.md files.
+For more information, visit the subdirectories in this repository and look at the README.md files.
 
 ## Prerequisites
 
@@ -22,9 +22,9 @@ Pointwise is automatically opened, the mesh is generated, then Pointwise is auto
 
 The volume conditions are also automatically translated from Pointwise to OpenFOAM format and exported to the constant/polyMesh sub-directory of each OpenFOAM case for the grid.
 
-Given the O-grid topology, no remeshing is required when changing the angle-of-attack (AoA). Instead, the direction of the inlet velocity vector orthogonal to the far-field boundary is adjusted.
+Given the O-grid topology, no remeshing is required when changing the AoA. Instead, the direction of the inlet velocity vector orthogonal to the far-field boundary is adjusted.
 
-Reference OpenFOAM cases that consider different AoAs are copied from the OF_ref directory, then pasted in a directory named after the parameterised airfoil which is then placed in the UPLOADS directory ready for simulation.
+Reference OpenFOAM cases that consider different AoAs are copied from the OF_ref directory, then pasted in a directory named after the parameterised airfoil placed in the UPLOADS directory ready for simulation.
 
 ## Step 2:
 
@@ -42,7 +42,7 @@ Use the processOFdata.m script to process the raw data from each log.simpleFoam	
 
 This generates and saves the residual and aerodynamic coefficient convergence plots of each simulated OpenFOAM case.
 
-This also creates an Excel spreadsheet with the final Cl, Cd, Cm and max. yPlus (in this column order) for each OpenFOAM case.
+This also creates an Excel spreadsheet with the final Cl, Cd, Cm, and max. yPlus (in this column order) for each OpenFOAM case.
 
 ## License
 
