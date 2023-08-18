@@ -1,0 +1,25 @@
+/*--------------------------------*- C++ -*----------------------------------*\ 
+| =========                 |                                                 | 
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           | 
+|  \\    /   O peration     | Version:  v2006                                 | 
+|   \\  /    A nd           | Website:  www.openfoam.com                      | 
+|    \\/     M anipulation  |                                                 | 
+\*---------------------------------------------------------------------------*/ 
+
+// Input parameters
+alpha               10;
+Re                  5000000;	// Reynolds number
+I                   0.02; 		// Turbulence intensity
+b                   10; 		// Eddy viscosity ratio
+
+// Calculate the boundary conditions from the input parameters
+alphar              #eval "degToRad($alpha)";
+i                   #eval "cos($alphar)";
+j                   #eval "sin($alphar)";
+mj                  #eval "-($j)";
+
+// Inlet calculations
+Ui                  ($i $j 0);
+nui                 #eval "1.0/$Re";
+ki                  #eval "3./2. * pow($I,2.0)";
+omegai              #eval "$ki*$Re*1.0/$b";

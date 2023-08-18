@@ -1,0 +1,23 @@
+wallShearStress
+{
+    // Mandatory entries (unmodifiable)
+    type            wallShearStress;
+    libs            (fieldFunctionObjects);
+
+    // Optional entries (runtime modifiable)
+    patches         (airfoil); // (wall1 "(wall2|wall3)");
+
+    // Optional (inherited) entries
+    writePrecision  16;
+    writeToFile     true;
+    useUserTime     true;
+    //region          region0;
+    enabled         true;
+    log             true;
+    //timeStart       0;
+    //timeEnd         1000;
+    executeControl  timeStep;
+    executeInterval 500;
+    writeControl    timeStep;
+    writeInterval   500;
+}

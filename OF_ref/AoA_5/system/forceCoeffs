@@ -1,0 +1,20 @@
+forceCoeffs
+{
+    type			forceCoeffs;
+	libs            ("libforces.so");
+    patches         (airfoil);
+	
+    writeControl 	timeStep;
+    writeInterval 	1;
+    log             true;
+    p     			p;
+    U     			U;
+    rho             rhoInf;
+    rhoInf 			1;
+    magUInf 		1;
+    Aref 			1;
+    lRef 			1;
+    liftDir         ($mj $i 0);
+    dragDir         ($i $j 0);
+    CofR            (0.25 0 -0.5);
+}
