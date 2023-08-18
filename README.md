@@ -44,6 +44,10 @@ This generates and saves the residual and aerodynamic coefficient convergence pl
 
 This also creates an Excel spreadsheet with the final Cl, Cd, Cm, and max. yPlus (in this column order) for each OpenFOAM case.
 
+## Authors
+
+* **John Watchorn** - *Development of the initial version of this toolchain* - [GitHub](https://github.com/John-Watchorn)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
